@@ -11,23 +11,14 @@ def _check(parms):
     is a string (V)
     has 54 elements (V)
     has 9 occurrences of 6 colors (V)
-    has each middle face being a different color
+    has each middle face being a different color (V)
     '''
     encodedCube = parms.get('cube', None)   
    
-    
-    
-    # using only for testing occurrences of color
     count={}
     
 
            
-
-    
-    # <class 'NoneType'>
-    # <class 'int'>
-
-    #Type test 
         
     if (encodedCube == None):
         result['status'] = 'error: cube is none'
@@ -45,15 +36,6 @@ def _check(parms):
         lists = list(encodedCube) 
     
 
-    # lists = list(encodedCube.replace(" ", ""))
-    #
-
-    # print(lists)
-    # print(count)
-    #
-    # toF = False
-
-    # using only for testing occurrences of color
     numCnt = False
     
     for i in lists:
