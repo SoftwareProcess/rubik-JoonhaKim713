@@ -91,7 +91,7 @@ class CheckTest(TestCase):
         status = result.get('status')
         self.assertEqual(status, 'error: cube is none') 
         
-    def test_check_011_ShouldReturnErrorOnNoneCube(self):
+    def test_check_012_ShouldReturnErrorOnInvalidTypeOfCube(self):
         parm = {'op':'check',
                 'cube' : 42}
         result = check._check(parm)
