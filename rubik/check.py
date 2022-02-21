@@ -1,5 +1,6 @@
 import rubik.cube as rubik
 from pickle import TRUE
+import re
 
 def _check(parms):
     result={}
@@ -18,7 +19,8 @@ def _check(parms):
     count={}
     
 
-           
+    pattern = re.compile("[A-Za-z0-9]+")
+    
         
     if (encodedCube == None):
         result['status'] = 'error: cube is none'
@@ -30,6 +32,10 @@ def _check(parms):
     
     elif ((str(type(encodedCube)) != "<class 'str'>")):
         result['status'] = 'error: Invalid cube input type'
+        return result
+    
+    elif (pattern.fullmatch(encodedCube) is None):
+        result['status'] = 'error: Illegal characeter'
         return result
     
     else:

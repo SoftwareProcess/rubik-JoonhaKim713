@@ -98,4 +98,12 @@ class CheckTest(TestCase):
         self.assertIn('status', result)
         status = result.get('status')
         self.assertEqual(status, 'error: Invalid cube input type')   
+        
+    def test_check_013_IllegalCharacter(self):
+        parm = {'op':'check',
+                'cube' : 'bbbbbbbbbr##rrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
+        result = check._check(parm)
+        self.assertIn('status', result)
+        status = result.get('status')
+        self.assertEqual(status, 'error: Illegal characeter') 
 
