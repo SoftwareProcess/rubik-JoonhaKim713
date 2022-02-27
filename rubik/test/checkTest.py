@@ -5,7 +5,7 @@ class CheckTest(TestCase):
 
     def test_check_010_ShouldReturnOkOnSolvedCube(self):
         parm = {'op':'check',
-                'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
+                'cube':'wwwwwwwwwbbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyy'}
         result = check._check(parm)
         self.assertIn('status', result)
         status = result.get('status')
