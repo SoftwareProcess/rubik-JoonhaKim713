@@ -10,6 +10,7 @@ def _solve(parms):
     # lists <- encodedCube    rLists <- rotations
     encodedCube = parms.get('cube', None)
     rotations = parms.get('rotate', None) 
+    rLists = []
    
     count={}
     result={}
@@ -74,7 +75,7 @@ def _solve(parms):
         return result
     # End P1
     
-\
+
     # P2) Check rList which has rotations, if there are values which is not FfRrBbLlUuDd, will return error
     
     rLists = list(rotations)
