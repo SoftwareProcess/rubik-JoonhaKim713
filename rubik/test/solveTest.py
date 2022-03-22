@@ -69,24 +69,6 @@ class solveTest(unittest.TestCase):
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
             self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
             
-        def test_solve_030_ShouldRotateValidNominalCubeMissing(self):
-            inputDict = {}
-            inputDict['cube'] = 'wwwwwwwwwbbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyy'
-            inputDict['rotate'] = ''
-            inputDict['op'] = 'solve'
-            
-            actualResult = solve._solve(inputDict)
-            
-            tInputDict = {}
-            tInputDict['cube'] = 'wwwwwwwwwbbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyy'
-            tInputDict['rotate'] = 'F'
-            tInputDict['op'] = 'solve'
-            testResult = solve._solve(tInputDict)
-
-            
-            self.assertEqual(testResult.get('cube'), actualResult.get('cube'))
-            self.assertEqual(testResult.get('status'), actualResult.get('status'))
-        ####
         
         def test_solve_040_ShouldRotateValidNominalCubeR(self):
             inputDict = {}
@@ -152,7 +134,7 @@ class solveTest(unittest.TestCase):
             
             actualResult = solve._solve(inputDict)
             expectedResult = {}
-            expectedResult['cube'] = 'wwwwwwwwwbbobbobborrrrrrrrryggyggyggbbbooooooyyyyyyggg'
+            expectedResult['cube'] = 'wwwwwwwwwbbybbybbyrrrrrrrrroggoggoggbbbooooooyyyyyyggg'
             expectedResult['status'] = 'ok'
 
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
@@ -166,7 +148,7 @@ class solveTest(unittest.TestCase):
             
             actualResult = solve._solve(inputDict)
             expectedResult = {}
-            expectedResult['cube'] = 'wwwwwwwwwbbobbobborrrrrrrrryggyggyggbbbooooooyyyyyyggg'
+            expectedResult['cube'] = 'wwwwwwwwwbbobbobborrrrrrrrryggyggygggggooooooyyyyyybbb'
             expectedResult['status'] = 'ok'
 
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
@@ -180,7 +162,7 @@ class solveTest(unittest.TestCase):
             
             actualResult = solve._solve(inputDict)
             expectedResult = {}
-            expectedResult['cube'] = 'owwowwowwbbbbbbbbbrryrryrrygggggggggroorooroowywyyywyy'
+            expectedResult['cube'] = 'owwowwowwbbbbbbbbbrryrryrrygggggggggroorooroowyywyywyy'
             expectedResult['status'] = 'ok'
 
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
@@ -194,7 +176,7 @@ class solveTest(unittest.TestCase):
             
             actualResult = solve._solve(inputDict)
             expectedResult = {}
-            expectedResult['cube'] = 'ywwywwywwbbbbbbbbbrrorrorrogggggggggwoowoowooryryyyryy'
+            expectedResult['cube'] = 'ywwywwywwbbbbbbbbbrrorrorrogggggggggwoowoowooryyryyryy'
             expectedResult['status'] = 'ok'
 
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
@@ -208,7 +190,7 @@ class solveTest(unittest.TestCase):
             
             actualResult = solve._solve(inputDict)
             expectedResult = {}
-            expectedResult['cube'] = 'wwwwwwbbbbbbbbbrrrrrrrrrgggggggggwwwoooooooooyyyyyyyyy'
+            expectedResult['cube'] = 'wwwwwwgggbbbbbbwwwrrrrrrbbbggggggrrroooooooooyyyyyyyyy'
             expectedResult['status'] = 'ok'
 
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
@@ -222,7 +204,7 @@ class solveTest(unittest.TestCase):
             
             actualResult = solve._solve(inputDict)
             expectedResult = {}
-            expectedResult['cube'] = 'wwwwwwgggbbbbbbwwwrrrrrrbbbggggggrrroooooooooyyyyyyyyy'
+            expectedResult['cube'] = 'wwwwwwbbbbbbbbbrrrrrrrrrgggggggggwwwoooooooooyyyyyyyyy'
             expectedResult['status'] = 'ok'
 
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
@@ -317,3 +299,50 @@ class solveTest(unittest.TestCase):
             self.assertIn('status', result)
             status = result.get('status')
             self.assertEqual(status, 'error: Illegal characeter') 
+            
+         
+
+        def test_solve_100_cubeRotate(self):
+            inputDict = {
+                'op': 'solve',
+                'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy'
+                }
+            expectedResult = {'status': 'ok', 
+                              'solution': ''}
+            actualResult = solve._solve(inputDict)
+            self.assertDictEqual(expectedResult, actualResult)
+        
+        def test_solve_110_cubeRotate(self):
+            inputDict = {
+                'op': 'solve',
+                'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy',
+                'rotate': ''
+                }
+            expectedResult = {'status': 'ok', 
+                              'solution': ''}
+            actualResult = solve._solve(inputDict)
+            self.assertDictEqual(expectedResult, actualResult)
+        
+        def test_solve_120_cubeRotate(self):
+            inputDict = {
+                'op': 'solve',
+                'cube': 'ybwgbyyrgrwyowwoorboorgygwwybbryyoyrggrwrgorbggwbobbow',
+                'rotate': ''
+                }
+            expectedResult = {'status': 'ok', 
+                              'solution': 'RRBBDRRRBBBBLBBBURRBBDRRRBLBBBDDDLLULLBBBFLLLUDDLLUrrFFLLbb'}
+            actualResult = solve._solve(inputDict)
+            self.assertDictEqual(expectedResult, actualResult)
+        
+        def test_solve_130_cubeRotate(self):
+            inputDict = {
+                'op': 'solve',
+                'cube': 'ybbbbwggboywrrbygwrgoygyroggobrorryowwbwygowwyrrowoybg',
+                'rotate': ''
+                }
+            expectedResult = {'status': 'ok', 
+                              'solution': 'UUUFFLLLUDLLUDDLLUUBDRRRBLBBBLLLUFFLLLUrrUUbbUFFLL'}
+            actualResult = solve._solve(inputDict)
+            self.assertDictEqual(expectedResult, actualResult)
+                
+                
