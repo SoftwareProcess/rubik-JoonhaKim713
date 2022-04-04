@@ -82,32 +82,38 @@ def _solve(parms):
     # P2) Entering solve mode for no rotation or empty
     solRot = [];
     if rotations is None or not rotations:   
-        # P2-1) Bottom cross solve
+        
         solveFlag = True;
         solveFlag2 = True;
-        
+        btmCross = True
         solution = ''
+        btmLayer = True        
         while(solveFlag):
-            if (cLists[49] == cLists[46] and cLists[49] == cLists[48] and cLists[49] == cLists[50] and cLists[49] == cLists[52] and cLists[13] == cLists[16] and cLists[22] == cLists[25] and cLists[31] == cLists[34] and cLists[4] == cLists[7]):
+            #Return solution
+            if (cLists[45] == cLists[46] and cLists[47] == cLists[48] and cLists[49] == cLists[50] and cLists[51] == cLists[52] and cLists[53] == cLists[45]):
+
                 
-                
+
+
+
+
                 result['status'] = 'ok'
-                
+            
                 for i in solRot:
                     solution += i
-                
+            
                 result['solution'] = solution
-                
-                
-                
+            
+            
+            
                 return result
-
+          
             else:
                 
+                # P2-1) Bottom cross solve
                 #top daisey
                 while(solveFlag2):
                     
-                    print(cLists[37] + cLists[39] + cLists[41] + cLists[43] + cLists[49])
                     if (cLists[49] == cLists[37] and cLists[49] == cLists[39] and cLists[49] == cLists[41] and cLists[49] == cLists[43] and cLists[37] == cLists[39] and cLists[37] == cLists[41] and cLists[41] == cLists[43]):
                         solveFlag2 = False
                         Flag1 = True
@@ -558,64 +564,418 @@ def _solve(parms):
                                 lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
                                 cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
                                 cLists = lists                  
-                  
-                # make bottom cross
-                if(cLists[10] == cLists[13] and Flag1 == True):
-                    solRot += 'rr'
-                    lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
-                    cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
-                    cLists = lists
                 
-                    lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
-                    cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
-                    cLists = lists  
-                    
-                    Flag1 = False              
-                                
-                elif(cLists[1] == cLists[4] and Flag2 == True):
-                    solRot += 'FF'                
-                    lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
-                    cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
-                    cLists = lists
                 
-                    lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
-                    cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
-                    cLists = lists 
-                    Flag2 = False               
-                                             
-                elif(cLists[28] == cLists[31] and Flag3 == True):
-                    solRot += 'LL'     
-                    lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
-                    cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
-                    cLists = lists
+                
+                while(btmCross): 
+                    # make bottom cross
+                    if(cLists[10] == cLists[13] and Flag1 == True):
+                        solRot += 'rr'
+                        lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                        cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                        cLists = lists
                     
-                    lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
-                    cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
-                    cLists = lists                
-                    Flag3 = False
-                                               
-                elif(cLists[19] == cLists[22] and Flag4 == True):           
-                    solRot += 'bb' 
-                    lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
-                    cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
-                    cLists = lists
-                    lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
-                    cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
-                    cLists = lists                                
-                    Flag4 = False
-                else:
-                    solRot += 'U'  
-                    lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
-                    cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
-                    cLists = lists                                 
+                        lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                        cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                        cLists = lists  
+                        
+                        Flag1 = False              
+                                    
+                    elif(cLists[1] == cLists[4] and Flag2 == True):
+                        solRot += 'FF'                
+                        lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                        cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
+                        cLists = lists
+                    
+                        lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                        cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
+                        cLists = lists 
+                        Flag2 = False               
+                                                 
+                    elif(cLists[28] == cLists[31] and Flag3 == True):
+                        solRot += 'LL'     
+                        lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                        cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                        cLists = lists
+                        
+                        lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                        cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                        cLists = lists                
+                        Flag3 = False
+                                                   
+                    elif(cLists[19] == cLists[22] and Flag4 == True):           
+                        solRot += 'bb' 
+                        lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                        cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
+                        cLists = lists
+                        lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                        cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
+                        cLists = lists                                
+                        Flag4 = False
+                    else:
+                        solRot += 'U'  
+                        lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                        cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                        cLists = lists     
+                        
+                    if (Flag1 == False and Flag2 == False and Flag3 == False and Flag4 == False):
+                        btmCross = False    
+                        
+                                                    
                 
                                
+                # P2-2) Make bottom layer
+                
+                count = 0
+                
+                while(btmLayer):    
+                      
+                    count = 0
+                    
+                    if (cLists[0] == cLists[49] or cLists[2] == cLists[49] or cLists[9] == cLists[49] or cLists[11] == cLists[49] or cLists[18] == cLists[49] or cLists[20] == cLists[49] or cLists[27] == cLists[49] or cLists[29] == cLists[49]):                            
+                    
+                        
+                        if (cLists[2] == cLists[4]):
+                            
+                            if(cLists[9] == cLists[49]):
+                                solRot += 'RUr'
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[15], cLists[12], cLists[9], cLists[16], cLists[13], cLists[10], cLists[17], cLists[14], cLists[11]
+                                cLists = lists
+                                
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                                cLists = lists  
+                                                              
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                                cLists = lists    
+                                
+                                count += 1 
+                                
+                                                           
+                        if (cLists[18] == cLists[22]):
+                            if(cLists[11] == cLists[49]):
+                                solRot += 'ruR'       
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                                cLists = lists 
+                                
+                                
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                                cLists = lists
+                                
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[15], cLists[12], cLists[9], cLists[16], cLists[13], cLists[10], cLists[17], cLists[14], cLists[11]
+                                cLists = lists      
+                                
+                                count += 1                           
+                                                                                       
+                        if (cLists[0] == cLists[4]):
+                            if(cLists[29] == cLists[49]):
 
-                
-                
-                
-                
-        return result
+                                solRot += 'luL'
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[29], cLists[32], cLists[35], cLists[28], cLists[31], cLists[34], cLists[27], cLists[30], cLists[33]
+                                cLists = lists
+                                
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                                cLists = lists    
+                                                            
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                                cLists = lists  
+                                
+                                count += 1                               
+                                                                
+                        if (cLists[20] == cLists[22]):
+                            if(cLists[27] == cLists[49]):
+                                solRot += 'LUl' 
+                                   
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                                cLists = lists  
+                                 
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                                cLists = lists  
+                                 
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[29], cLists[32], cLists[35], cLists[28], cLists[31], cLists[34], cLists[27], cLists[30], cLists[33]
+                                cLists = lists   
+                                
+                                count += 1               
+                                                                                                                                        
+                        if (cLists[9] == cLists[13]):
+
+                            if(cLists[2] == cLists[49]):
+
+                                solRot += 'fuF'   
+                                
+                                lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                                cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[2], cLists[5], cLists[8], cLists[1], cLists[4], cLists[7], cLists[0], cLists[3], cLists[6]
+                                cLists = lists 
+                                
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                                cLists = lists   
+                                                              
+                                lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                                cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
+                                cLists = lists 
+                                
+                                count += 1                                
+                                                               
+                        if (cLists[29] == cLists[31]):
+                            
+
+                            if(cLists[0] == cLists[49]):
+
+                                
+                                solRot += 'FUf'   
+                                
+                                lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                                cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
+                                cLists = lists  
+                                  
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                                cLists = lists  
+                                
+                                lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                                cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[2], cLists[5], cLists[8], cLists[1], cLists[4], cLists[7], cLists[0], cLists[3], cLists[6]
+                                cLists = lists    
+                                
+                                count += 1                                                               
+                                
+                                                                                                        
+                        if (cLists[11] == cLists[13]):
+                            if(cLists[18] == cLists[49]):
+                                solRot += 'BUb'  
+                                
+                                lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                                cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[24], cLists[21], cLists[18], cLists[25], cLists[22], cLists[19], cLists[26], cLists[23], cLists[20]
+                                cLists = lists  
+                                                              
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                                cLists = lists  
+                                
+                                lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                                cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
+                                cLists = lists 
+                                
+                                count += 1 
+                                                                                                                                   
+                        if (cLists[27] == cLists[31]):
+                            if(cLists[20] == cLists[49]):
+                                solRot += 'buB'   
+                                
+                                lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                                cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
+                                cLists = lists    
+                                                              
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                                cLists = lists   
+                                
+                                lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                                cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[24], cLists[21], cLists[18], cLists[25], cLists[22], cLists[19], cLists[26], cLists[23], cLists[20]
+                                cLists = lists 
+                                
+                                count += 1 
+                                                          
+                        if (count == 0):
+                            solRot += 'U'
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                            cLists = lists
+                            print('On')
+                            count = 0
+                            
+                    else:
+                        
+                        # when colors are in bottom sides
+                        if (cLists[15] == cLists[49]):
+                            solRot += 'fUF'
+                            lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                            cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[2], cLists[5], cLists[8], cLists[1], cLists[4], cLists[7], cLists[0], cLists[3], cLists[6]
+                            cLists = lists 
+                                                              
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                            cLists = lists 
+                                                            
+                            lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                            cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
+                            cLists = lists                            
+                            
+                        elif (cLists[17] == cLists[49]):
+                            solRot += 'Bub'
+                            lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                            cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[24], cLists[21], cLists[18], cLists[25], cLists[22], cLists[19], cLists[26], cLists[23], cLists[20]
+                            cLists = lists   
+                                                     
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                            cLists = lists          
+                                              
+                            lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                            cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
+                            cLists = lists                                        
+                                        
+                            
+                        elif (cLists[24] == cLists[49]):
+                            solRot += 'rUR'
+                            lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                            cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                            cLists = lists                            
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                            cLists = lists  
+                            lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                            cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[15], cLists[12], cLists[9], cLists[16], cLists[13], cLists[10], cLists[17], cLists[14], cLists[11]
+                            cLists = lists     
+                                                                            
+                        elif (cLists[26] == cLists[49]):
+                            solRot += 'Lul'
+                            lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                            cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                            cLists = lists    
+                                                    
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                            cLists = lists  
+                            
+                            lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                            cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[29], cLists[32], cLists[35], cLists[28], cLists[31], cLists[34], cLists[27], cLists[30], cLists[33]
+                            cLists = lists 
+                                                                                 
+                        elif (cLists[33] == cLists[49]):
+                            solRot += 'bUB'
+                            lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                            cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[20], cLists[23], cLists[26], cLists[19], cLists[22], cLists[25], cLists[18], cLists[21], cLists[24]
+                            cLists = lists 
+                                                        
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                            cLists = lists  
+                            
+                            lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
+                            cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[24], cLists[21], cLists[18], cLists[25], cLists[22], cLists[19], cLists[26], cLists[23], cLists[20]
+                            cLists = lists                             
+                                                       
+                        elif (cLists[35] == cLists[49]):
+                            solRot += 'Fuf'
+                            lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                            cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[6], cLists[3], cLists[0], cLists[7], cLists[4], cLists[1], cLists[8], cLists[5], cLists[2]
+                            cLists = lists     
+                                                     
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                            cLists = lists  
+                            
+                            lists[42], lists[43], lists[44], lists[9], lists[12], lists[15], lists[47], lists[46], lists[45], lists[35], lists[32], lists[29], lists[0], lists[1], lists[2], lists[3], lists[4], lists[5], lists[6], lists[7], lists[8] = \
+                            cLists[9], cLists[12], cLists[15], cLists[47], cLists[46], cLists[45], cLists[35], cLists[32], cLists[29], cLists[42], cLists[43], cLists[44], cLists[2], cLists[5], cLists[8], cLists[1], cLists[4], cLists[7], cLists[0], cLists[3], cLists[6]
+                            cLists = lists   
+                                                                                 
+                        elif (cLists[6] == cLists[49]):
+                            solRot += 'lUL'
+                            lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                            cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[29], cLists[32], cLists[35], cLists[28], cLists[31], cLists[34], cLists[27], cLists[30], cLists[33]
+                            cLists = lists      
+                                                   
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                            cLists = lists 
+                            
+                            lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                            cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                            cLists = lists      
+                                                                                
+                        elif (cLists[8] == cLists[49]):
+                            solRot += 'Rur'
+                            lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                            cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[15], cLists[12], cLists[9], cLists[16], cLists[13], cLists[10], cLists[17], cLists[14], cLists[11]
+                            cLists = lists  
+                                                       
+                            lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                            cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                            cLists = lists 
+                                                        
+                            lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                            cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                            cLists = lists 
+                                                    
+                        else:
+                            if (cLists[42] == cLists[49]):
+                                solRot += 'luLluL'
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[29], cLists[32], cLists[35], cLists[28], cLists[31], cLists[34], cLists[27], cLists[30], cLists[33]
+                                cLists = lists                                 
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                                cLists = lists                                
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                                cLists = lists
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[29], cLists[32], cLists[35], cLists[28], cLists[31], cLists[34], cLists[27], cLists[30], cLists[33]
+                                cLists = lists                                 
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[38], cLists[41], cLists[44], cLists[37], cLists[40], cLists[43], cLists[36], cLists[39], cLists[42]
+                                cLists = lists                                
+                                lists[42], lists[39], lists[36], lists[20], lists[23], lists[26], lists[51], lists[48], lists[45], lists[6], lists[3], lists[0], lists[27], lists[28], lists[29], lists[30], lists[31], lists[32], lists[33], lists[34], lists[35] = \
+                                cLists[20], cLists[23], cLists[26], cLists[51], cLists[48], cLists[45], cLists[6], cLists[3], cLists[0], cLists[42], cLists[39], cLists[36], cLists[33], cLists[30], cLists[27], cLists[34], cLists[31], cLists[28], cLists[35], cLists[32], cLists[29]
+                                cLists = lists                                
+                                
+                                                                 
+                            elif(cLists[44] == cLists[49]):
+                                solRot += 'RUrRUr'
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[15], cLists[12], cLists[9], cLists[16], cLists[13], cLists[10], cLists[17], cLists[14], cLists[11]
+                                cLists = lists  
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                                cLists = lists                             
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                                cLists = lists                             
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[15], cLists[12], cLists[9], cLists[16], cLists[13], cLists[10], cLists[17], cLists[14], cLists[11]
+                                cLists = lists  
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                                cLists = lists                             
+                                lists[44], lists[41], lists[38], lists[18], lists[21], lists[24], lists[53], lists[50], lists[47], lists[8], lists[5], lists[2], lists[9], lists[10], lists[11], lists[12], lists[13], lists[14], lists[15], lists[16], lists[17] = \
+                                cLists[18], cLists[21], cLists[24], cLists[53], cLists[50], cLists[47], cLists[8], cLists[5], cLists[2], cLists[44], cLists[41], cLists[38], cLists[11], cLists[14], cLists[17], cLists[10], cLists[13], cLists[16], cLists[9], cLists[12], cLists[15]         
+                                cLists = lists  
+                                                                                              
+                            else:
+                                solRot += 'U'
+                                lists[0], lists[1], lists[2], lists[9], lists[10], lists[11], lists[18], lists[19], lists[20], lists[27], lists[28], lists[29], lists[36], lists[37], lists[38], lists[39], lists[40], lists[41], lists[42], lists[43], lists[44] = \
+                                cLists[9], cLists[10], cLists[11], cLists[18], cLists[19], cLists[20], cLists[27], cLists[28], cLists[29], cLists[0], cLists[1], cLists[2], cLists[42], cLists[39], cLists[36], cLists[43], cLists[40], cLists[37], cLists[44], cLists[41], cLists[38]
+                                cLists = lists
+ 
+                    
+                    print('^^^^^')
+                    print(cLists[45])
+                    print(cLists[46])
+                    print(cLists[47])
+                    print(cLists[48])
+                    print(cLists[49])
+                    print(cLists[50])
+                    print(cLists[51])
+                    print(cLists[52])
+                    print(cLists[53])
+                    print('^^^^')
+                    
+                    if (cLists[45] == cLists[46] and cLists[46] == cLists[47] and cLists[47] == cLists[48] and cLists[48] == cLists[49] and cLists[50] == cLists[49] and cLists[50] == cLists[51] and cLists[51] == cLists[52] and cLists[52] == cLists[53]):
+                        btmLayer = False
+
+    
     # End P2
     
     

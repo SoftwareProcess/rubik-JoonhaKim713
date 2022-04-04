@@ -330,18 +330,20 @@ class solveTest(unittest.TestCase):
                 'rotate': ''
                 }
             expectedResult = {'status': 'ok', 
-                              'solution': 'RRBBDRRRBBBBLBBBURRBBDRRRBLBBBDDDLLULLBBBFLLLUDDLLUrrFFLLbb'}
+                              'solution': 'RRBBDRRRBBBBLBBBURRBBDRRRBLBBBDDDLLULLBBBFLLLUDDLLUrrFFLLbbUURUrruRUluLRUrRUrULUlfuF'}
             actualResult = solve._solve(inputDict)
             self.assertDictEqual(expectedResult, actualResult)
         
-        def test_solve_130_cubeRotate(self):
+
+        def test_solve_140_cubeRotate(self):
             inputDict = {
                 'op': 'solve',
                 'cube': 'ybbbbwggboywrrbygwrgoygyroggobrorryowwbwygowwyrrowoybg',
                 'rotate': ''
                 }
+            
             expectedResult = {'status': 'ok', 
-                              'solution': 'UUUFFLLLUDLLUDDLLUUBDRRRBLBBBLLLUFFLLLUrrUUbbUFFLL'}
+                              'solution': 'UUUFFLLLUDLLUDDLLUUBDRRRBLBBBLLLUFFLLLUrrUUbbUFFLLUURUrURUrRUrFUfUfuF'}
             actualResult = solve._solve(inputDict)
             self.assertDictEqual(expectedResult, actualResult)
                 
