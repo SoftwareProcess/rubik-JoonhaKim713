@@ -2,7 +2,6 @@ import rubik.cube as rubik
 import re
 from flask.cli import cli
 
-
 def _solve(parms):
     
     # P1) get parms ['cube'] and ['rotate'] and encodedCube and rotations will have these values
@@ -37,7 +36,6 @@ def _solve(parms):
     else:
         lists = list(encodedCube) 
 
-
     numCnt = False
     
     for i in lists:
@@ -49,7 +47,6 @@ def _solve(parms):
         if (9 != j):
             numCnt = True
             break
-    
     
     k = 4
     l = k + 9
@@ -91,23 +88,14 @@ def _solve(parms):
         while(solveFlag):
             #Return solution
             if (cLists[45] == cLists[46] and cLists[47] == cLists[48] and cLists[49] == cLists[50] and cLists[51] == cLists[52] and cLists[53] == cLists[45]):
-
                 
-
-
-
-
                 result['status'] = 'ok'
             
                 for i in solRot:
                     solution += i
             
                 result['solution'] = solution
-            
-            
-            
                 return result
-          
             else:
                 
                 # P2-1) Bottom cross solve
@@ -211,8 +199,7 @@ def _solve(parms):
                                 lists[36], lists[37], lists[38], lists[11], lists[14], lists[17], lists[53], lists[52], lists[51], lists[33], lists[30], lists[27], lists[18], lists[19], lists[20], lists[21], lists[22], lists[23], lists[24], lists[25], lists[26] = \
                                 cLists[11], cLists[14], cLists[17], cLists[53], cLists[52], cLists[51], cLists[33], cLists[30], cLists[27], cLists[36], cLists[37], cLists[38], cLists[24], cLists[21], cLists[18], cLists[25], cLists[22], cLists[19], cLists[26], cLists[23], cLists[20]
                                 cLists = lists                                                                  
-                            
-                                                
+                                       
                                                          
                             if(cLists[21] == cLists[49]):
                                 solRot += 'BBBDRRRB'                                    
@@ -1068,7 +1055,6 @@ def _solve(parms):
             k += 1
     # End P4
     
-    
     # P5) all the rotated values on lists array will be on fLists as string
     # Then return fLists as ['Cube'] and status['ok']
     fLists = ''
@@ -1082,5 +1068,3 @@ def _solve(parms):
     
     return result
     # End P5
-    
-

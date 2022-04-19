@@ -347,4 +347,14 @@ class solveTest(unittest.TestCase):
             actualResult = solve._solve(inputDict)
             self.assertDictEqual(expectedResult, actualResult)
                 
-                
+
+        def test_solve_150_cubeRotate(self):
+            inputDict = {
+                'op': 'solve',
+                'cube': 'ybbbbwggboywrrbygwrgoygyroggobrorryowwbwygowwyrrowoybg',
+                'rotate': ''
+                }
+            
+            expectedResult = {}
+            actualResult = solve._solve(inputDict)
+            self.assertDictEqual(expectedResult, actualResult)                
